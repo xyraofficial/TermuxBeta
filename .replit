@@ -1,0 +1,28 @@
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Termux Project Setup"
+
+[[workflows.workflow]]
+name = "Termux Project Setup"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"Termux Android Application - Development Environment\" && echo \"\" && echo \"This is an Android Gradle project structure:\" && echo \"\" && ls -la /tmp/termux-clone && echo \"\" && echo \"Project modules:\" && /tmp/termux-clone/gradlew -q projects 2>&1 || echo \"Note: Full Gradle check requires Android SDK. For development setup in Replit, use the project files to review code.\" && echo \"\" && echo \"Project ready for development in Replit!\""
+
+[workflows.workflow.metadata]
+outputType = "console"

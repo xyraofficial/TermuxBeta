@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/right_drawer"
+    android:layout_width="280dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:orientation="vertical"
+    android:background="?attr/termuxActivityDrawerBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/termux_info"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="?attr/termuxActivityDrawerImageTint" />
+        <ImageButton
+            android:id="@+id/close_right_drawer_button"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_settings"
+            android:background="@null"
+            android:contentDescription="@string/action_close_drawer"
+            android:rotation="45"
+            app:tint="?attr/termuxActivityDrawerImageTint" />
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/info_tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/termuxActivityDrawerBackground"
+        app:tabTextColor="?attr/termuxActivityDrawerImageTint"
+        app:tabSelectedTextColor="?attr/colorAccent" />
+
+    <FrameLayout
+        android:id="@+id/info_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ScrollView
+            android:id="@+id/termux_info_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/termux_version_label"
+                    android:textStyle="bold"
+                    android:textColor="?attr/termuxActivityDrawerImageTint"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:id="@+id/termux_version_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/termuxActivityDrawerImageTint"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/android_version_label"
+                    android:textStyle="bold"
+                    android:textColor="?attr/termuxActivityDrawerImageTint"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:id="@+id/android_version_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/termuxActivityDrawerImageTint"
+                    android:layout_marginBottom="16dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/device_info_label"
+                    android:textStyle="bold"
+                    android:textColor="?attr/termuxActivityDrawerImageTint"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:id="@+id/device_info_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/termuxActivityDrawerImageTint"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/packages_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/package_source_label"
+                    android:textStyle="bold"
+                    android:textColor="?attr/termuxActivityDrawerImageTint"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:id="@+id/packages_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/termuxActivityDrawerImageTint"
+                    android:textSize="12sp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/default_package_sources" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/setup_guide_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/setup_guide_label"
+                    android:textStyle="bold"
+                    android:textColor="?attr/termuxActivityDrawerImageTint"
+                    android:layout_marginTop="8dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="?attr/termuxActivityDrawerImageTint"
+                    android:text="@string/setup_guide_content"
+                    android:layout_marginBottom="16dp" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+</LinearLayout>
